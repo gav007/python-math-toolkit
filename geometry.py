@@ -1,10 +1,12 @@
 import math
 
 class Circle:
+    
     def __init__(self, radius):
         # radius is the value passed in when we create a Circle object
-        self.__radius = radius
-        
+        self.__radius = 0
+        self.set_radius(radius)
+             
     def get_radius(self):
         return self.__radius
     
@@ -27,3 +29,29 @@ class Circle:
         return f"Circle with radius {self.__radius}"
     
      
+class Square:
+    
+    def __init__(self, side):
+        # calculates the square
+        self.__side = 0
+        self.set_side(side)
+        
+    def get_side(self):
+        return self.__side
+    
+    def set_side(self, side):
+        if side > 0:
+            self.__side = side
+        else:
+            print("The side must be greater than 0")
+            
+    def __str__(self):
+        return f"Square with length of {self.__side}"
+    
+    def area(self):
+        return self.__side ** 2
+    
+    def perimeter(self):
+        return self.__side * 4
+    
+    
