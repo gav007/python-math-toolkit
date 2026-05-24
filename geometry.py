@@ -89,4 +89,42 @@ class Triangle:
     def __str__(self):
         return f"Triangle with base of {self.__base} and height of {self.__height}"
     
+
+class Rectangle:
+    
+    def __init__(self, length, width):
+        self.__length = 0
+        self.__width = 0
+        self.set_length(length)
+        self.set_width(width)
+        
+    def get_length(self):
+        return self.__length
+    
+    def get_width(self):
+        return self.__width
+    
+    def set_width(self, width):
+        if width > 0:
+            self.__width = width
+        else: 
+            print("The width must be greater than 0")
+            
+    def set_length(self, length):
+        if length > 0:
+            self.__length = length
+        else:
+            print("The length must be greater than 0")
+            
+    def area(self):
+        area = self.__length * self.__width
+        return area
+    
+    def perimeter(self):
+        perimeter = 2 * (self.__length + self.__width)
+        return perimeter
+    
+    def __str__(self):
+        return f"A rectangle with a length of {self.get_length()} and a width of {self.get_width()}"
+    
     
