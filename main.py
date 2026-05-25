@@ -1,5 +1,7 @@
 from geometry import *
 from geo_calculations import *
+from algebra import *
+from algebra_calculations import *
 
 subjects = ("Geomerty", "Algebra", "Calculas","Exit")
 
@@ -47,6 +49,24 @@ def geometry_choice():
     except ValueError:
         print("Not a valid input")
         
+def algebra_choice():
+    try:
+        print("For Linear Equation Press (1)")
+        print("For Slope Calculator Press (2)")
+        print("For Distance Calculator Press (3)")
+        print("For Midpoint Calculator Press (4)")
+        print()
+        while True:
+            print("")
+            users_input = int(input("Enter your choice\n"))
+            
+            
+            if users_input < 1 or users_input > 4:
+                print("This is an invalid Selection")
+            else:
+                return users_input
+    except ValueError:
+        print("Not a valid input")
  
             
 def main():
@@ -56,6 +76,7 @@ def main():
         display(subjects)
         choice = users_choice()
 
+        # THIS IS FOR THE GEOMETRY CHOICE
         if choice == 1:
             geo_choice = geometry_choice()
 
@@ -70,8 +91,21 @@ def main():
             else:
                 print("This value is not accepted.")
 
+        # THIS IS FOR THE ALGEBRA CHOICE
         elif choice == 2:
-            print("Algebra is not built yet.")
+            algebra = algebra_choice()
+            
+            if algebra == 1:
+                cal_linear_equation()
+            elif algebra == 2:
+                slope_calculator()
+            elif algebra == 3:
+                distance_calculator()
+            elif algebra == 4:
+                midpoint_cal()
+            else:
+                print("This value is not accepted.")
+            
 
         elif choice == 3:
             print("Calculus is not built yet.")
