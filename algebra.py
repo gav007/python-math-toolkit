@@ -176,3 +176,37 @@ class MidpointCalculator:
     
     def __str__(self):
         return f"Midpoint between ({self.__x1}, {self.__y1}) and ({self.__x2}, {self.__y2})"
+    
+class QuadraticEquation:
+    def __init__(self):
+        self.__a = 0
+        self.__b = 0
+        self.__c = 0
+        
+    def get_a(self):
+        return self.__a
+    
+    def get_b(self):
+        return self.__b
+    
+    def get_c(self):
+        return self.__c
+    
+    def set_a(self, a):
+        if a == 0:
+            print("a cannot be 0 as this will make it linear")
+        else:
+            self.__a = a
+            
+    def set_b(self, b):
+        self.__b = b
+        
+    def set_c(self, c):
+        self.__c = c
+        
+    def cal_quad(self, x):
+        y = self.__a *x ** 2 + self.__b * x + self.__c
+        return y
+    
+    def __str__(self):
+        return f"Quadratic equation: y = {self.__a}x^2 + {self.__b}x + {self.__c}"

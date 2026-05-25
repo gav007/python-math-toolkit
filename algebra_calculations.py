@@ -173,3 +173,44 @@ def midpoint_cal():
             
         except ValueError:
             print("Value is not an acceptable entry")
+            
+            
+def cal_quadratic_equation():
+    
+    while True:
+        try:
+            # Create quadratic object
+            quad = QuadraticEquation()
+            
+            # Point for x and y result
+            point = Point()
+            
+            print("Please enter your quadratic values below\n")
+            
+            a = float(input("Enter the a coefficient (x squared value): "))
+            quad.set_a(a)
+            
+            b = float(input("Enter the b coefficient (x value): "))
+            quad.set_b(b)
+            
+            c = float(input("Enter the c constant value: "))
+            quad.set_c(c)
+            
+            x = float(input("Enter the x input value: "))
+            point.set_x(x)
+            
+            # Calculate y
+            y = quad.cal_quad(point.get_x())
+            point.set_y(y)
+            
+            print(quad)
+            print(point)
+            print("Y value:", round(point.get_y(), 2))
+            
+            try_again = input("Press Enter to try again or q to return to menu: ")
+                
+            if try_again.lower() == "q":
+                return
+            
+        except ValueError:
+            print("Value is not an acceptable entry")
