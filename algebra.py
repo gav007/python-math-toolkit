@@ -1,3 +1,4 @@
+import math
 class LinearEquation:
     # Calculates the Y value when given the slope and intercept.
     def __init__(self, slope, intercept):
@@ -53,16 +54,16 @@ class SlopeCalculator:
         return self.__y2
     
     def set_point_x1(self, x1):
-        return self.__x1
+        self.__x1 = x1
     
     def set_point_x2(self, x2):
-        return self.__x2
+        self.__x2 = x2
     
     def set_point_y1(self, y1):
-        return self.__y1
+        self.__y1 = y1
         
     def set_point_y2(self, y2):
-        return self.__y2
+        self.__y2 = y2
         
     def calculate_slope(self):
         if (self.__x2 - self.__x1) == 0:
@@ -70,3 +71,108 @@ class SlopeCalculator:
         else:
             m = (self.__y2 - self.__y1) / (self.__x2 - self.__x1)
             return m
+        
+    def __str__(self):
+        return f"Slope between ({self.__x1}, {self.__y1}) and ({self.__x2}, {self.__y2})"
+
+class Point:
+    
+    def __init__(self):
+        self.__x = 0
+        self.__y = 0
+        
+    def set_x(self, x):
+        self.__x = x
+        
+    def set_y(self, y):
+        self.__y = y
+        
+    def get_x(self):
+        return self.__x
+    
+    def get_y(self):
+        return self.__y
+        
+    def __str__(self):
+        return f"Point({self.__x}, {self.__y})"
+    
+    
+class DistanceCalculator:
+    
+    def __init__(self):
+        self.__x1 = 0
+        self.__x2 = 0
+        self.__y1 = 0
+        self.__y2 = 0
+    
+    def get_point_x1(self):
+        return self.__x1
+    
+    def get_point_x2(self):
+        return self.__x2
+    
+    def get_point_y1(self):
+        return self.__y1
+    
+    def get_point_y2(self):
+        return self.__y2
+    
+    def set_point_x1(self, x1):
+        self.__x1 = x1
+    
+    def set_point_x2(self, x2):
+        self.__x2 = x2
+    
+    def set_point_y1(self, y1):
+        self.__y1 = y1
+        
+    def set_point_y2(self, y2):
+        self.__y2 = y2
+        
+    def cal_distance(self):
+        d = math.sqrt((self.__x2-self.__x1)**2+(self.__y2-self.__y1)**2)
+        return d
+    
+    def __str__(self):
+        return f"Distance between ({self.__x1}, {self.__y1}) and ({self.__x2}, {self.__y2})"
+    
+class MidpointCalculator:
+    
+    def __init__(self):
+        self.__x1 = 0
+        self.__x2 = 0
+        self.__y1 = 0
+        self.__y2 = 0
+    
+    def get_point_x1(self):
+        return self.__x1
+    
+    def get_point_x2(self):
+        return self.__x2
+    
+    def get_point_y1(self):
+        return self.__y1
+    
+    def get_point_y2(self):
+        return self.__y2
+    
+    def set_point_x1(self, x1):
+        self.__x1 = x1
+    
+    def set_point_x2(self, x2):
+        self.__x2 = x2
+    
+    def set_point_y1(self, y1):
+        self.__y1 = y1
+        
+    def set_point_y2(self, y2):
+        self.__y2 = y2
+        
+    def cal_midpoint(self):
+        x = (self.__x1 + self.__x2)/2
+        y = (self.__y1 + self.__y2)/2
+        mid = (x, y)
+        return mid
+    
+    def __str__(self):
+        return f"Midpoint between ({self.__x1}, {self.__y1}) and ({self.__x2}, {self.__y2})"
