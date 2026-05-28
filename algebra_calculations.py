@@ -1,4 +1,5 @@
 from algebra import *
+from graphing import graph_linear_equation
 
 # Calculates the Linear Equation... 
 def cal_linear_equation():
@@ -18,6 +19,10 @@ def cal_linear_equation():
             # calculate y 
             y = linear.calculate_y(x)
             
+            # set x an y for graphing
+            linear.set_x(x)
+            linear.set_y(y)
+            
             # print slope
             print("Slope:",linear.get_slope())
             
@@ -27,10 +32,12 @@ def cal_linear_equation():
             # print y calculation
             print("Y value:", round(y,2))
             
-            # try again
-            try_again = input("Press Enter to try again or q to return to menu: ")
-                
-            if try_again.lower() == 'q':
+            choice = input("Press Enter to try again, g to graph, or q to return to menu: ")
+
+            if choice.lower() == "g":
+                graph_linear_equation(linear)                
+
+            elif choice.lower() == "q":
                 return
             
         except ValueError:

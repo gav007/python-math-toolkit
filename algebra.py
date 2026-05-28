@@ -4,6 +4,8 @@ class LinearEquation:
     def __init__(self, slope, intercept):
         self.__slope = 0
         self.__intercept = 0
+        self.__x = 0
+        self.__y = 0
         
         self.set_slope(slope)
         self.set_intercept(intercept)
@@ -19,6 +21,18 @@ class LinearEquation:
 
     def set_intercept(self, intercept):
         self.__intercept = intercept
+        
+    def set_x(self, x):
+        self.__x = x
+
+    def get_x(self):
+        return self.__x
+
+    def set_y(self, y):
+        self.__y = y
+
+    def get_y(self):
+        return self.__y
     
     def calculate_y(self, x):
         y = self.__slope * x + self.__intercept
